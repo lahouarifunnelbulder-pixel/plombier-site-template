@@ -126,6 +126,89 @@ h1 {
   gap: 0.45rem;
 }
 
+.social-proof {
+  position: relative;
+  margin-top: -3.2rem;
+  z-index: 10;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1rem 1rem 0.95rem;
+  text-align: center;
+}
+
+.stat-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: #f3e9db;
+  margin-bottom: 0.45rem;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-label {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+#apropos.section {
+  padding-top: 5.2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(9, 31, 53, 0.16);
+}
+
+.service-media {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.service-media img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover .service-media img {
+  transform: scale(1.06);
+}
+
 .section { padding: 4rem 0; }
 .section-alt { background: #e9eef4; }
 
@@ -167,7 +250,6 @@ h2 {
   font-size: clamp(1.55rem, 3vw, 2.2rem);
 }
 
-.cards,
 .reviews,
 .reasons-grid {
   display: grid;
@@ -179,7 +261,6 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.card,
 .reviews blockquote,
 .quote-form,
 .reasons-grid article {
@@ -190,7 +271,6 @@ h2 {
   margin: 0;
 }
 
-.card img,
 .zone-grid img {
   width: 100%;
   border-radius: 12px;
@@ -296,13 +376,21 @@ textarea:focus {
   color: #9eb2c5;
 }
 
+
+
+@media (max-width: 1050px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
-  .cards,
   .reviews,
   .zone-grid,
   .footer-grid,
   .reasons-grid,
-  .about-grid {
+  .about-grid,
+  .stats-grid {
     grid-template-columns: 1fr;
   }
 
@@ -314,6 +402,16 @@ textarea:focus {
     flex-direction: column;
     align-items: flex-end;
     gap: 0.4rem;
+  }
+
+  .services-grid { grid-template-columns: 1fr; }
+
+  .social-proof {
+    margin-top: -1.8rem;
+  }
+
+  #apropos.section {
+    padding-top: 4.2rem;
   }
 
   .hero { min-height: 68vh; }
