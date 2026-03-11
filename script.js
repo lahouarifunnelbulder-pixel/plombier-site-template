@@ -22,54 +22,75 @@ if (form && feedback) {
   });
 }
 
-const statValues = document.querySelectorAll('.stat-value');
-let statsAnimated = false;
-
-const formatValue = (value, hasDecimal) => {
-  if (hasDecimal) {
-    return value.toFixed(1);
+const initStatsAnimation = () => {
+  const statsSection = document.getElementById('stats');
+  const statValues = document.querySelectorAll('.stat-value');
+  if (!statsSection || statValues.length === 0) {
+    return;
   }
-  return Math.floor(value).toString();
-};
 
-const counters = document.querySelectorAll(".stat-number");
+  let hasAnimated = false;
 
-const animateCounters = () => {
+  const formatValue = (value, hasDecimal) => {
+    if (hasDecimal) {
+      return value.toFixed(1);
+    }
+    return Math.floor(value).toString();
+  };
 
-  counters.forEach(counter => {
+  const animateStat = (element) => {
+    const target = Number(element.dataset.target || element.dataset.count || 0);
+    const suffix = element.dataset.suffix || '';
+    const hasDecimal = String(target).includes('.');
+    const duration = 1600;
+    const start = performance.now();
 
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = target * eased;
 
-    const update = () => {
+      element.textContent = `${formatValue(current, hasDecimal)}${suffix}`;
 
-      const increment = target / 100;
-
-      count += increment;
-
-      if(count < target){
-        counter.innerText = Math.floor(count);
-        requestAnimationFrame(update);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        element.textContent = `${formatValue(target, hasDecimal)}${suffix}`;
       }
-      else{
-        counter.innerText = target + "+";
-      }
+    };
 
+    requestAnimationFrame(step);
+  };
+
+  const runAnimationOnce = () => {
+    if (hasAnimated) {
+      return;
     }
 
-    update();
+    hasAnimated = true;
+    statValues.forEach(animateStat);
+  };
 
-  });
+  if ('IntersectionObserver' in window) {
+    const statsObserver = new IntersectionObserver(
+      (entries, observer) => {
+        const isVisible = entries.some((entry) => entry.isIntersecting);
+        if (isVisible) {
+          runAnimationOnce();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+    );
 
+    statsObserver.observe(statsSection);
+  } else {
+    runAnimationOnce();
+  }
 };
 
-const observer = new IntersectionObserver(entries => {
-
-  if(entries[0].isIntersecting){
-    animateCounters();
-    observer.disconnect();
-  }
-
-});
-
-observer.observe(document.querySelector(".stats-section"));
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initStatsAnimation);
+} else {
+  initStatsAnimation();
+}
