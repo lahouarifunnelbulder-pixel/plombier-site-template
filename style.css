@@ -219,6 +219,25 @@ h1 {
 .section { padding: 4rem 0; }
 .section-alt { background: #e9eef4; }
 
+
+.section-cta {
+  padding: 0 0 3.2rem;
+}
+
+.section-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.section-cta-services {
+  margin-top: -1rem;
+}
+
+.section-cta-urgence {
+  background: #e9eef4;
+  padding-top: 0.8rem;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -419,6 +438,11 @@ textarea:focus {
 
   #apropos.section {
     padding-top: 4.2rem;
+  }
+
+
+  .section-cta {
+    padding-bottom: 2.6rem;
   }
 
   .hero { min-height: 68vh; }
