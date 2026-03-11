@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Illustration plomberie chauffage">
+  <rect width="1200" height="800" fill="#dff1ff"/>
+  <circle cx="220" cy="170" r="90" fill="#8ccbf1"/>
+  <rect x="150" y="280" width="900" height="360" rx="30" fill="#b9e1fb"/>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial" font-size="54" fill="#0f4c81">Image Placeholder</text>
+  <text x="600" y="490" text-anchor="middle" font-family="Arial" font-size="38" fill="#0f4c81">Plomberie &amp; Chauffage</text>
+</svg>
