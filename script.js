@@ -32,43 +32,44 @@ const formatValue = (value, hasDecimal) => {
   return Math.floor(value).toString();
 };
 
-const animateStat = (element) => {
-  const target = Number(element.dataset.count || 0);
-  const suffix = element.dataset.suffix || '';
-  const hasDecimal = !Number.isInteger(target);
-  const duration = 1600;
-  const start = performance.now();
+const counters = document.querySelectorAll(".stat-number");
 
-  const step = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = target * eased;
+const animateCounters = () => {
 
-    element.textContent = `${formatValue(current, hasDecimal)}${suffix}`;
+  counters.forEach(counter => {
 
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      element.textContent = `${formatValue(target, hasDecimal)}${suffix}`;
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+
+    const update = () => {
+
+      const increment = target / 100;
+
+      count += increment;
+
+      if(count < target){
+        counter.innerText = Math.floor(count);
+        requestAnimationFrame(update);
+      }
+      else{
+        counter.innerText = target + "+";
+      }
+
     }
-  };
 
-  requestAnimationFrame(step);
+    update();
+
+  });
+
 };
 
-if (statValues.length > 0) {
-  const statsObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !statsAnimated) {
-          statsAnimated = true;
-          statValues.forEach(animateStat);
-          observer.disconnect();
-        }
-      });
-    },
-    { threshold: 0.35 }
-  );
+const observer = new IntersectionObserver(entries => {
 
-  statsObserver.observe(statValues[0]);
-}
+  if(entries[0].isIntersecting){
+    animateCounters();
+    observer.disconnect();
+  }
+
+});
+
+observer.observe(document.querySelector(".stats-section"));
