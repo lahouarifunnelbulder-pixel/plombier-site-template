@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plomberie & Chauffage Martin | Dépannage rapide à Lyon et alentours</title>
+  <meta name="description" content="Plombier chauffagiste à Lyon : installation, dépannage urgent, entretien chauffage. Intervention locale rapide avec devis gratuit." />
+  <meta name="keywords" content="plombier Lyon, chauffagiste Lyon, dépannage plomberie, entretien chaudière, devis plomberie" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Plomberie & Chauffage Martin" />
+  <meta property="og:description" content="Votre plombier chauffagiste local à Lyon et alentours. Devis gratuit et intervention rapide." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#accueil">Plomberie & Chauffage <span>Martin</span></a>
+      <a class="btn btn-small" href="#devis">Demander un devis</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="tag">Intervention 7j/7 • Lyon et agglomération</p>
+          <h1>Votre plombier chauffagiste de confiance</h1>
+          <p class="subtitle">Installation, dépannage et entretien pour votre confort au quotidien. Service rapide, travail soigné et tarifs transparents.</p>
+          <a class="btn" href="#devis">Demander un devis</a>
+        </div>
+        <img src="images/hero-plomberie.svg" alt="Technicien de plomberie et chauffage en intervention" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Nos services</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="images/service-plomberie.svg" alt="Service de plomberie" loading="lazy" />
+            <h3>Plomberie</h3>
+            <p>Installation et rénovation de salles de bain, robinetterie, réseaux d'eau et sanitaires.</p>
+          </article>
+          <article class="card">
+            <img src="images/service-depannage.svg" alt="Service de dépannage" loading="lazy" />
+            <h3>Dépannage</h3>
+            <p>Fuite d'eau, canalisation bouchée, chauffe-eau en panne : intervention rapide et efficace.</p>
+          </article>
+          <article class="card">
+            <img src="images/service-chauffage.svg" alt="Service de chauffage" loading="lazy" />
+            <h3>Chauffage</h3>
+            <p>Pose, entretien et dépannage de chaudières, radiateurs et systèmes de chauffage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="avis" class="section section-alt">
+      <div class="container">
+        <h2>Avis clients</h2>
+        <div class="reviews">
+          <blockquote>
+            « Intervention en moins d'une heure pour une fuite importante. Professionnel et rassurant. »
+            <cite>— Claire D., Lyon 3e</cite>
+          </blockquote>
+          <blockquote>
+            « Installation de notre nouvelle chaudière impeccable. Travail propre et explications claires. »
+            <cite>— Karim L., Villeurbanne</cite>
+          </blockquote>
+          <blockquote>
+            « Très bon rapport qualité/prix, devis respecté et ponctualité au rendez-vous. »
+            <cite>— Sophie M., Bron</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="zone" class="section">
+      <div class="container zone-grid">
+        <div>
+          <h2>Zone d'intervention locale</h2>
+          <p>Nous intervenons rapidement à <strong>Lyon</strong> et dans les communes voisines : Villeurbanne, Bron, Vénissieux, Caluire-et-Cuire, Oullins et Saint-Priest.</p>
+          <p>Besoin d'une urgence plomberie ou d'un entretien chauffage ? Contactez-nous pour une intervention dans la journée selon disponibilité.</p>
+        </div>
+        <img src="images/zone-intervention.svg" alt="Carte de la zone d'intervention locale" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="devis" class="section section-alt">
+      <div class="container">
+        <h2>Demande de devis</h2>
+        <form id="devis-form" class="quote-form" novalidate>
+          <label for="nom">Nom</label>
+          <input id="nom" name="nom" type="text" required />
+
+          <label for="telephone">Téléphone</label>
+          <input id="telephone" name="telephone" type="tel" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="service">Service recherché</label>
+          <select id="service" name="service" required>
+            <option value="">Sélectionnez un service</option>
+            <option>Plomberie</option>
+            <option>Dépannage</option>
+            <option>Chauffage</option>
+          </select>
+
+          <label for="message">Votre besoin</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button class="btn" type="submit">Envoyer ma demande</button>
+          <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p><strong>Téléphone :</strong> <a href="tel:+33472000000">04 72 00 00 00</a></p>
+      <p><strong>Email :</strong> <a href="mailto:contact@plomberie-martin.fr">contact@plomberie-martin.fr</a></p>
+      <p><strong>Adresse :</strong> 25 Rue de la République, 69002 Lyon</p>
+    </div>
+    <p class="copyright">© <span id="year"></span> Plomberie & Chauffage Martin</p>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Plumber",
+      "name": "Plomberie & Chauffage Martin",
+      "image": "images/hero-plomberie.svg",
+      "telephone": "+33472000000",
+      "email": "contact@plomberie-martin.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "25 Rue de la République",
+        "addressLocality": "Lyon",
+        "postalCode": "69002",
+        "addressCountry": "FR"
+      },
+      "areaServed": ["Lyon", "Villeurbanne", "Bron", "Vénissieux", "Caluire-et-Cuire", "Oullins", "Saint-Priest"],
+      "url": "https://www.plomberie-martin.fr"
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
