@@ -361,6 +361,7 @@ h1 {
 h2 {
   margin-top: 0;
   font-size: clamp(1.55rem, 3vw, 2.2rem);
+  text-align: center;
 }
 
 .reviews,
