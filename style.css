@@ -238,6 +238,43 @@ h1 {
   padding-top: 0.8rem;
 }
 
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid #dde6ef;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 0.9rem 1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.faq-item p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -432,6 +469,11 @@ textarea:focus {
 
   .services-grid { grid-template-columns: 1fr; }
 
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
   .social-proof {
     margin-top: -1.8rem;
   }
@@ -446,4 +488,13 @@ textarea:focus {
   }
 
   .hero { min-height: 68vh; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
