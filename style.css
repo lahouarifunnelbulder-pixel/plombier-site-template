@@ -288,7 +288,7 @@ h1 {
   cursor: pointer;
   font-weight: 800;
   color: #ffffff;
-  background: #c00000;
+  background: var(--accent);
   border-radius: 12px;
   min-height: 74px;
   display: flex;
@@ -301,6 +301,14 @@ h1 {
 
 .faq-item summary::-webkit-details-marker {
   display: none;
+}
+
+.faq-item summary:hover {
+  background: #b48950;
+}
+
+.faq-item[open] summary {
+  background: #b48950;
 }
 
 .faq-item summary::after {

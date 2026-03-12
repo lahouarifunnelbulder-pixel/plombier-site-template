@@ -90,15 +90,31 @@ const initStatsAnimation = () => {
 };
 
 const initScrollReveal = () => {
-  const revealItems = document.querySelectorAll('.reveal-on-scroll');
+  const revealItems = Array.from(document.querySelectorAll('.reveal-on-scroll'));
   if (revealItems.length === 0) {
     return;
   }
 
   const reveal = (element) => element.classList.add('visible');
 
+  const revealInViewport = () => {
+    revealItems.forEach((item) => {
+      if (item.classList.contains('visible')) {
+        return;
+      }
+
+      const rect = item.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top <= viewportHeight * 0.92 && rect.bottom >= 0) {
+        reveal(item);
+      }
+    });
+  };
+
   if (!('IntersectionObserver' in window)) {
-    revealItems.forEach(reveal);
+    revealInViewport();
+    window.addEventListener('scroll', revealInViewport, { passive: true });
+    window.addEventListener('resize', revealInViewport);
     return;
   }
 
@@ -111,10 +127,12 @@ const initScrollReveal = () => {
         }
       });
     },
-    { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -5% 0px' }
   );
 
   revealItems.forEach((item) => observer.observe(item));
+  revealInViewport();
+  window.addEventListener('load', revealInViewport, { once: true });
 };
 
 const initPage = () => {
