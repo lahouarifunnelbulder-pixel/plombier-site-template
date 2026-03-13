@@ -117,6 +117,7 @@ h1 {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 1.3rem;
+  justify-content: center;
 }
 
 .hero-highlights {
