@@ -379,25 +379,84 @@ h2 {
   text-align: center;
 }
 
-.reviews,
-.reasons-grid {
+.reviews {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
-.reasons-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .reviews blockquote,
-.quote-form,
-.reasons-grid article {
+.quote-form {
   background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1.2rem;
   margin: 0;
+}
+
+#pourquoi {
+  background: linear-gradient(180deg, #e5ebf3 0%, #dae3ee 100%);
+}
+
+.pourquoi-wrap {
+  max-width: 1180px;
+}
+
+.pourquoi-intro {
+  margin: 0.5rem auto 2rem;
+  max-width: 880px;
+  color: #3f4856;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.reason-card {
+  background: #fdfefe;
+  border: 1px solid #d8e0ea;
+  border-radius: 16px;
+  box-shadow: 0 14px 26px rgba(22, 38, 60, 0.09);
+  padding: 1.7rem 1.3rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(22, 38, 60, 0.14);
+}
+
+.reason-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #f5e6d0, #fff9f1);
+  border: 1px solid #e8d3b8;
+}
+
+.reason-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: var(--accent);
+}
+
+.reason-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.45rem, 2vw, 1.95rem);
+}
+
+.reason-card p {
+  margin: 0;
+  color: #404958;
+  font-size: 1.04rem;
+  line-height: 1.5;
 }
 
 .reviews cite {
@@ -643,6 +702,12 @@ textarea:focus {
 
 
 
+@media (max-width: 1200px) {
+  .reasons-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1050px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -656,10 +721,22 @@ textarea:focus {
 
   .reviews,
   .footer-grid,
-  .reasons-grid,
   .about-grid,
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reason-card {
+    padding: 1.45rem 1.1rem;
+  }
+
+  .reason-icon {
+    width: 64px;
+    height: 64px;
   }
 
   .city-list { columns: 1; }
