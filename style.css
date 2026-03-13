@@ -819,3 +819,23 @@ textarea:focus {
     transition: none;
   }
 }
+@media (max-width: 768px) {
+  .container,
+  .section-container,
+  .wrapper {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .card,
+  .service-card,
+  .feature-card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
