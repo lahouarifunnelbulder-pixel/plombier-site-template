@@ -18,10 +18,11 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+  text-align: center;
 }
 
 .container {
-  width: min(1140px, 92%);
+  width: min(1280px, 96%);
   margin: 0 auto;
 }
 
@@ -255,7 +256,7 @@ h1 {
 }
 
 #faq .container {
-  max-width: 980px;
+  max-width: 1120px;
 }
 
 #faq h2 {
@@ -507,6 +508,10 @@ textarea:focus {
 }
 
 @media (max-width: 900px) {
+  .container {
+    width: min(1280px, 98%);
+  }
+
   .reviews,
   .zone-grid,
   .footer-grid,
