@@ -423,10 +423,85 @@ h2 {
   padding-left: 1.2rem;
 }
 
-.quote-form {
-  max-width: 700px;
+
+
+#devis {
+  background: #e7e7e7;
+}
+
+.devis-layout {
+  text-align: left;
+}
+
+.devis-head {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.devis-head p {
+  margin: 0;
+  color: #505864;
+  font-size: 1.1rem;
+}
+
+.devis-grid {
   display: grid;
-  gap: 0.65rem;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 2.1rem;
+  align-items: start;
+}
+
+.devis-contact h3,
+.quote-form h3 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.devis-contact p {
+  margin: 0;
+  color: #4a5563;
+  max-width: 560px;
+}
+
+.devis-phone {
+  display: inline-block;
+  margin: 1.25rem 0 1.3rem;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.devis-contact iframe {
+  width: 100%;
+  min-height: 390px;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.quote-form {
+  background: #ececec;
+  border: 1px solid #d0d0d0;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.quote-form label {
+  font-weight: 700;
+}
+
+#devis input,
+#devis textarea {
+  background: #f5f5f5;
+}
+
+.quote-form .btn {
+  justify-self: start;
+  padding: 0.8rem 1.8rem;
 }
 
 input,
@@ -532,6 +607,24 @@ textarea:focus {
   }
 
   .services-grid { grid-template-columns: 1fr; }
+
+
+  .devis-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .devis-head {
+    margin-bottom: 1.4rem;
+  }
+
+  .devis-head p {
+    font-size: 1rem;
+  }
+
+  .devis-contact iframe {
+    min-height: 280px;
+  }
 
 
   .faq-intro {

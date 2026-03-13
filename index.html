@@ -219,32 +219,43 @@
     </section>
 
     <section id="devis" class="section section-alt reveal-on-scroll">
-      <div class="container">
-        <h2>Demande de devis</h2>
-        <form id="devis-form" class="quote-form" novalidate>
-          <label for="nom">Nom</label>
-          <input id="nom" name="nom" type="text" required />
+      <div class="container devis-layout">
+        <div class="devis-head">
+          <h2>Contactez-nous</h2>
+          <p>Pour toute demande d'information ou de devis, contactez-nous dès aujourd'hui.</p>
+        </div>
 
-          <label for="telephone">Téléphone</label>
-          <input id="telephone" name="telephone" type="tel" required />
+        <div class="devis-grid">
+          <aside class="devis-contact">
+            <h3>Appelez-nous</h3>
+            <p>Nous sommes disponibles 24/7 pour répondre à vos questions et vous fournir un devis gratuit.</p>
+            <a class="devis-phone" href="tel:+33472000000">04 72 00 00 00</a>
+            <iframe
+              title="Carte de localisation de Plomberie & Chauffage Martin à Lyon"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=4.80%2C45.73%2C4.90%2C45.78&layer=mapnik&marker=45.7578%2C4.8320"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </aside>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required />
+          <form id="devis-form" class="quote-form" novalidate>
+            <h3>Formulaire de Contact</h3>
 
-          <label for="service">Service recherché</label>
-          <select id="service" name="service" required>
-            <option value="">Sélectionnez un service</option>
-            <option>Plomberie</option>
-            <option>Dépannage</option>
-            <option>Chauffage</option>
-          </select>
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" required />
 
-          <label for="message">Votre besoin</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
 
-          <button class="btn" type="submit">Envoyer ma demande</button>
-          <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
-        </form>
+            <label for="telephone">Téléphone</label>
+            <input id="telephone" name="telephone" type="tel" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button class="btn" type="submit">ENVOYER</button>
+            <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
