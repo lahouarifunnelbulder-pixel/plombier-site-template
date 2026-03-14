@@ -78,7 +78,7 @@ body {
   min-height: 78vh;
   display: grid;
   align-items: center;
-  background: url('https://github.com/lahouarifunnelbulder-pixel/plombier-site-template/blob/main/images/plomblier-chauffagiste-lyon-martin%20(1).png?raw=true') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -135,8 +135,9 @@ h1 {
 
 .social-proof {
   position: relative;
-  margin-top: -4.8rem;
-  z-index: 15;
+  margin-top: -5.8rem;
+  margin-bottom: -1rem;
+  z-index: 20;
 }
 
 .stats-grid {
@@ -184,7 +185,7 @@ h1 {
 }
 
 #apropos.section {
-  padding-top: 6.6rem;
+  padding-top: 7rem;
 }
 
 .services-grid {
@@ -869,11 +870,12 @@ textarea:focus {
   }
 
   .social-proof {
-    margin-top: -2.4rem;
+    margin-top: -3rem;
+    margin-bottom: -0.5rem;
   }
 
   #apropos.section {
-    padding-top: 4.8rem;
+    padding-top: 5.1rem;
   }
 
 
@@ -932,11 +934,12 @@ textarea:focus {
   }
 
   .social-proof {
-    margin-top: -2rem;
+    margin-top: -1.6rem;
+    margin-bottom: 0;
   }
 
   #apropos.section {
-    padding-top: 4.4rem;
+    padding-top: 4.6rem;
   }
 
   #services .container,
