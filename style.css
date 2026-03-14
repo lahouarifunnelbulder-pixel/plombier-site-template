@@ -531,22 +531,11 @@ h2 {
   fill: var(--accent);
 }
 
-.zone-more {
-  margin-top: 0.6rem;
-}
-
 .zone-outro {
   margin: 1.9rem 0 0;
   font-size: clamp(1.35rem, 2.3vw, 2rem);
   font-weight: 700;
   color: #252c36;
-}
-
-.local-intro { color: var(--muted); }
-.city-list {
-  columns: 2;
-  gap: 2rem;
-  padding-left: 1.2rem;
 }
 
 
@@ -739,8 +728,6 @@ textarea:focus {
     height: 64px;
   }
 
-  .city-list { columns: 1; }
-
   .zone-cities {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -812,7 +799,7 @@ textarea:focus {
 }
 
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 @media (max-width: 768px) {
   .container {
     width: calc(100% - 24px);
