@@ -184,7 +184,7 @@ const initReviewsCarousel = () => {
     if (timer) {
       return;
     }
-    timer = window.setInterval(next, 4500);
+    timer = window.setInterval(next, 2800);
   };
 
   const stop = () => {
@@ -195,7 +195,20 @@ const initReviewsCarousel = () => {
     timer = null;
   };
 
-  window.addEventListener('resize', apply);
+  window.addEventListener('resize', () => {
+    apply();
+    stop();
+    start();
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stop();
+    } else {
+      start();
+    }
+  });
+
   carousel.addEventListener('mouseenter', stop);
   carousel.addEventListener('mouseleave', start);
 

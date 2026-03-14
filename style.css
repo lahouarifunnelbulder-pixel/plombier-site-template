@@ -223,9 +223,31 @@ h1 {
   transform: scale(1.06);
 }
 
+main > section,
+main > .section-cta {
+  position: relative;
+}
+
+main > section:not(:first-of-type)::before,
+main > .section-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138, 156, 176, 0.38), transparent);
+}
+
 .section { padding: 4rem 0; }
 .section-alt { background: #e9eef4; }
 
+#stats { background: linear-gradient(180deg, #f8fbfe 0%, #eef3f8 100%); }
+#apropos { background: #f8fafd; }
+#services { background: linear-gradient(180deg, #f6f9fc 0%, #eef3f9 100%); }
+#avis { background: linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%); }
+#devis { background: linear-gradient(180deg, #eef2f6 0%, #e2e8ef 100%); }
+#faq { background: linear-gradient(180deg, #edf1f5 0%, #e3e8ee 100%); }
 
 .section-cta {
   padding: 0 0 3.2rem;
@@ -296,10 +318,6 @@ h1 {
   to { transform: translateX(calc(-50% - 0.6rem)); }
 }
 
-
-#faq {
-  background: #e7e7e7;
-}
 
 #faq .container {
   max-width: 1120px;
@@ -425,16 +443,19 @@ h2 {
 
 .reviews-carousel {
   overflow: hidden;
+  padding: 0.2rem 0.1rem;
 }
 
 .reviews-track {
   display: flex;
-  transition: transform 0.6s ease;
+  gap: 0;
+  will-change: transform;
+  transition: transform 0.82s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .review-card {
   flex: 0 0 calc(100% / 3);
-  padding: 0 0.62rem;
+  padding: 0.55rem;
 }
 
 .review-card blockquote,
@@ -445,6 +466,13 @@ h2 {
   padding: 1.2rem;
   margin: 0;
   min-height: 100%;
+}
+
+.review-card blockquote {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #pourquoi {
@@ -514,7 +542,7 @@ h2 {
 
 .review-card cite {
   display: block;
-  margin-top: 0.65rem;
+  margin-top: 0.9rem;
   font-style: normal;
   color: var(--muted);
 }
@@ -592,10 +620,6 @@ h2 {
 }
 
 
-
-#devis {
-  background: #e7e7e7;
-}
 
 .devis-layout {
   text-align: left;
@@ -979,8 +1003,9 @@ textarea:focus {
     padding: 0;
   }
 
-  .reviews-track {
-    gap: 0.8rem;
+  .review-card blockquote {
+    min-height: auto;
+    padding: 1.15rem;
   }
 
   .partners-track img {
