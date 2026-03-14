@@ -135,9 +135,78 @@ const initScrollReveal = () => {
   window.addEventListener('load', revealInViewport, { once: true });
 };
 
+
+const initReviewsCarousel = () => {
+  const carousel = document.querySelector('[data-carousel="reviews"]');
+  if (!carousel) {
+    return;
+  }
+
+  const track = carousel.querySelector('.reviews-track');
+  const slides = Array.from(carousel.querySelectorAll('.review-card'));
+  if (!track || slides.length === 0) {
+    return;
+  }
+
+  let index = 0;
+  let timer = null;
+
+  const getPerView = () => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      return 1;
+    }
+    if (window.matchMedia('(max-width: 1050px)').matches) {
+      return 2;
+    }
+    return 3;
+  };
+
+  const apply = () => {
+    const perView = getPerView();
+    if (index > slides.length - perView) {
+      index = 0;
+    }
+
+    const offset = (index / slides.length) * 100;
+    track.style.transform = `translateX(-${offset}%)`;
+  };
+
+  const next = () => {
+    const perView = getPerView();
+    index += perView;
+    if (index > slides.length - perView) {
+      index = 0;
+    }
+    apply();
+  };
+
+  const start = () => {
+    if (timer) {
+      return;
+    }
+    timer = window.setInterval(next, 4500);
+  };
+
+  const stop = () => {
+    if (!timer) {
+      return;
+    }
+    window.clearInterval(timer);
+    timer = null;
+  };
+
+  window.addEventListener('resize', apply);
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+
+  apply();
+  start();
+};
+
 const initPage = () => {
   initStatsAnimation();
   initScrollReveal();
+  initReviewsCarousel();
 };
 
 if (document.readyState === 'loading') {
