@@ -689,6 +689,10 @@ textarea:focus {
   color: #9eb2c5;
 }
 
+.mobile-call-cta {
+  display: none;
+}
+
 
 
 @media (max-width: 1200px) {
@@ -801,8 +805,40 @@ textarea:focus {
 
 
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 78px;
+  }
+
   .container {
     width: calc(100% - 24px);
+  }
+
+  .site-header {
+    border-bottom-color: #d7e0e8;
+  }
+
+  .nav-wrap {
+    padding: 0.55rem 0;
+    gap: 0.6rem;
+  }
+
+  .brand {
+    font-size: 0.96rem;
+    line-height: 1.2;
+  }
+
+  .header-cta {
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .header-cta .btn-small {
+    display: none;
+  }
+
+  .phone-link {
+    font-size: 0.9rem;
+    white-space: nowrap;
   }
 
   .section {
@@ -810,7 +846,7 @@ textarea:focus {
   }
 
   .hero-content {
-    padding: 3.6rem 0 3.1rem;
+    padding: 3.4rem 0 2.9rem;
   }
 
   #services .container,
@@ -829,10 +865,30 @@ textarea:focus {
     gap: 0.95rem;
   }
 
+  .service-card {
+    text-align: left;
+    padding: 0.95rem;
+  }
+
+  .service-media img {
+    height: 190px;
+  }
+
+  .service-card h3 {
+    margin: 0.2rem 0 0.45rem;
+    font-size: 1.28rem;
+    line-height: 1.28;
+  }
+
+  .service-card p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
   .quote-form,
   .devis-contact,
-  .reason-card,
-  .service-card {
+  .reason-card {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -845,6 +901,25 @@ textarea:focus {
   .faq-item p {
     padding-left: 0.9rem;
     padding-right: 0.9rem;
+  }
+
+  .mobile-call-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    box-shadow: 0 14px 28px rgba(11, 24, 37, 0.26);
   }
 }
 
