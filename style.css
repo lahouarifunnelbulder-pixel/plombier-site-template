@@ -362,6 +362,7 @@ main > .section-cta::before {
   gap: 1rem;
   padding: 1.1rem 1.4rem;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
+  text-align: left;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -396,6 +397,7 @@ main > .section-cta::before {
   border-radius: 0 0 12px 12px;
   padding: 1rem 1.25rem 1.15rem;
   color: #4b5664;
+  text-align: left;
 }
 
 .about-grid {
