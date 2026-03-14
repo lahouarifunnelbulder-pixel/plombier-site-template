@@ -812,6 +812,55 @@ textarea:focus {
 }
 
 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding: 3.4rem 0;
+  }
+
+  .hero-content {
+    padding: 3.6rem 0 3.1rem;
+  }
+
+  #services .container,
+  #pourquoi .container,
+  #zone .container,
+  #devis .container,
+  #faq .container {
+    max-width: none;
+  }
+
+  .services-grid,
+  .reasons-grid,
+  .zone-cities,
+  .devis-grid,
+  .faq-grid {
+    gap: 0.95rem;
+  }
+
+  .quote-form,
+  .devis-contact,
+  .reason-card,
+  .service-card {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .faq-item summary {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .faq-item p {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {
     opacity: 1;
