@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-label="Placeholder zone d'intervention">
-  <rect width="900" height="600" fill="#e8f4ff"/>
-  <circle cx="450" cy="300" r="180" fill="#9bd4f6"/>
-  <circle cx="450" cy="300" r="18" fill="#0f4c81"/>
-  <text x="450" y="530" text-anchor="middle" font-family="Arial" font-size="40" fill="#0f4c81">Zone d'intervention locale</text>
-</svg>
