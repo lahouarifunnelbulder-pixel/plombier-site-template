@@ -110,6 +110,14 @@ h1 {
   margin: 0.8rem 0 1rem;
 }
 
+.hero-title {
+  text-wrap: balance;
+}
+
+.mobile-break {
+  display: none;
+}
+
 .subtitle { color: #e7edf4; }
 
 .hero-actions {
@@ -135,8 +143,8 @@ h1 {
 
 .social-proof {
   position: relative;
-  margin-top: -5.8rem;
-  margin-bottom: -1rem;
+  margin-top: -6.8rem;
+  margin-bottom: -1.4rem;
   z-index: 20;
 }
 
@@ -185,7 +193,7 @@ h1 {
 }
 
 #apropos.section {
-  padding-top: 7rem;
+  padding-top: 6rem;
 }
 
 .services-grid {
@@ -870,12 +878,12 @@ textarea:focus {
   }
 
   .social-proof {
-    margin-top: -3rem;
-    margin-bottom: -0.5rem;
+    margin-top: -3.6rem;
+    margin-bottom: -0.6rem;
   }
 
   #apropos.section {
-    padding-top: 5.1rem;
+    padding-top: 4.7rem;
   }
 
 
@@ -933,13 +941,23 @@ textarea:focus {
     padding: 3.4rem 0 2.9rem;
   }
 
+  .hero-title {
+    font-size: clamp(1.72rem, 8.3vw, 2.2rem);
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+
   .social-proof {
-    margin-top: -1.6rem;
+    margin-top: -2.2rem;
     margin-bottom: 0;
   }
 
   #apropos.section {
-    padding-top: 4.6rem;
+    padding-top: 4.2rem;
   }
 
   #services .container,
